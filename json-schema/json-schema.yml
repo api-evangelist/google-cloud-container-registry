@@ -1,0 +1,86 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://raw.githubusercontent.com/api-evangelist/google-cloud-container-registry/refs/heads/main/json-schema/json-schema.yml
+title: Google Cloud Container Registry Schema
+description: Schema defining the core resources of the Google Cloud Container Registry API.
+type: object
+properties:
+  imageManifest:
+    $ref: '#/$defs/ImageManifest'
+  tagList:
+    $ref: '#/$defs/TagList'
+$defs:
+  ImageManifest:
+    type: object
+    title: Image Manifest
+    description: A Docker image manifest describing the image configuration and layers.
+    properties:
+      schemaVersion:
+        type: integer
+        description: The schema version of the manifest.
+      mediaType:
+        type: string
+        description: The media type of the manifest.
+      config:
+        type: object
+        description: The image configuration descriptor.
+        properties:
+          mediaType:
+            type: string
+          size:
+            type: integer
+          digest:
+            type: string
+        required:
+          - mediaType
+          - digest
+      layers:
+        type: array
+        description: The image layers.
+        items:
+          type: object
+          properties:
+            mediaType:
+              type: string
+            size:
+              type: integer
+            digest:
+              type: string
+          required:
+            - mediaType
+            - digest
+    required:
+      - schemaVersion
+      - mediaType
+  TagList:
+    type: object
+    title: Tag List
+    description: A list of tags for a container image.
+    properties:
+      name:
+        type: string
+        description: The name of the image.
+      tags:
+        type: array
+        items:
+          type: string
+        description: The tags associated with the image.
+    required:
+      - name
+      - tags
+  Layer:
+    type: object
+    title: Layer
+    description: A layer descriptor for a container image.
+    properties:
+      mediaType:
+        type: string
+        description: The media type of the layer.
+      size:
+        type: integer
+        description: The size of the layer in bytes.
+      digest:
+        type: string
+        description: The digest of the layer content.
+    required:
+      - mediaType
+      - digest

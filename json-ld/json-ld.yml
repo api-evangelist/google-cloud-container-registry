@@ -1,0 +1,25 @@
+"@context":
+  "@vocab": https://schema.org/
+  gcloud: https://cloud.google.com/container-registry/docs/
+  oci: https://opencontainers.org/
+  name: schema:name
+  description: schema:description
+  url: schema:url
+  ImageManifest:
+    "@id": oci:image-manifest
+    "@type": schema:DigitalDocument
+    schemaVersion: schema:version
+    mediaType: schema:encodingFormat
+    config: schema:associatedMedia
+    layers: schema:hasPart
+  TagList:
+    "@id": gcloud:managing-images
+    "@type": schema:ItemList
+    name: schema:name
+    tags: schema:keywords
+  Layer:
+    "@id": oci:image-layer
+    "@type": schema:MediaObject
+    mediaType: schema:encodingFormat
+    size: schema:contentSize
+    digest: schema:identifier
