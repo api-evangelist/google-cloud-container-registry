@@ -19,7 +19,7 @@ paths:
   /v2/{name}/tags/list:
     get:
       operationId: listTags
-      summary: List Image Tags
+      summary: Google Cloud Container Registry List Image Tags
       description: Lists tags for a given image in the registry.
       parameters:
         - name: name
@@ -38,7 +38,7 @@ paths:
   /v2/{name}/manifests/{reference}:
     get:
       operationId: getManifest
-      summary: Get Image Manifest
+      summary: Google Cloud Container Registry Get Image Manifest
       description: Retrieves the manifest for a container image.
       parameters:
         - name: name
@@ -61,7 +61,7 @@ paths:
                 $ref: '#/components/schemas/ImageManifest'
     put:
       operationId: putManifest
-      summary: Push Image Manifest
+      summary: Google Cloud Container Registry Push Image Manifest
       description: Pushes an image manifest to the registry.
       parameters:
         - name: name
@@ -85,7 +85,7 @@ paths:
           description: Manifest created successfully
     delete:
       operationId: deleteManifest
-      summary: Delete Image Manifest
+      summary: Google Cloud Container Registry Delete Image Manifest
       description: Deletes an image manifest from the registry.
       parameters:
         - name: name
@@ -104,7 +104,7 @@ paths:
   /v2/_catalog:
     get:
       operationId: listCatalog
-      summary: List Repositories
+      summary: Google Cloud Container Registry List Repositories
       description: Lists repositories in the registry.
       responses:
         '200':
@@ -116,7 +116,7 @@ paths:
   /v2/{name}/blobs/{digest}:
     get:
       operationId: getBlob
-      summary: Get Image Blob
+      summary: Google Cloud Container Registry Get Image Blob
       description: Retrieves a blob (layer) for a container image.
       parameters:
         - name: name
