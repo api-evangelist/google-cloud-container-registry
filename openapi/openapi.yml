@@ -35,6 +35,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListTagsResponse'
+      tags:
+        - Tags
   /v2/{name}/manifests/{reference}:
     get:
       operationId: getManifest
@@ -59,6 +61,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ImageManifest'
+      tags:
+        - Manifests
     put:
       operationId: putManifest
       summary: Google Cloud Container Registry Push Image Manifest
@@ -83,6 +87,8 @@ paths:
       responses:
         '201':
           description: Manifest created successfully
+      tags:
+        - Manifests
     delete:
       operationId: deleteManifest
       summary: Google Cloud Container Registry Delete Image Manifest
@@ -101,6 +107,8 @@ paths:
       responses:
         '202':
           description: Manifest deleted
+      tags:
+        - Manifests
   /v2/_catalog:
     get:
       operationId: listCatalog
@@ -113,6 +121,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CatalogResponse'
+      tags:
+        - ' Catalog'
   /v2/{name}/blobs/{digest}:
     get:
       operationId: getBlob
@@ -137,6 +147,8 @@ paths:
               schema:
                 type: string
                 format: binary
+      tags:
+        - Blobs
 components:
   schemas:
     ListTagsResponse:
@@ -187,3 +199,8 @@ components:
           items:
             type: string
           description: The list of repository names.
+tags:
+  - name: ' Catalog'
+  - name: Blobs
+  - name: Manifests
+  - name: Tags
