@@ -1,0 +1,170 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Container Registry API — Manifests
+  description: 'Google Cloud Container Registry API — Manifests. 3 operations. Lead operation: Google Cloud Container Registry
+    Get Image Manifest. Self-contained Naftiko capability covering one Google Cloud Container Registry business surface.'
+  tags:
+  - Google Cloud Container Registry
+  - Manifests
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_CONTAINER_REGISTRY_API_KEY: GOOGLE_CLOUD_CONTAINER_REGISTRY_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-manifests
+    baseUri: https://containerregistry.googleapis.com
+    description: Google Cloud Container Registry API — Manifests business capability. Self-contained, no shared references.
+    resources:
+    - name: v2-name-manifests-reference
+      path: /v2/{name}/manifests/{reference}
+      operations:
+      - name: getmanifest
+        method: GET
+        description: Google Cloud Container Registry Get Image Manifest
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: reference
+          in: path
+          type: string
+          description: The tag or digest of the image.
+          required: true
+      - name: putmanifest
+        method: PUT
+        description: Google Cloud Container Registry Push Image Manifest
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: reference
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deletemanifest
+        method: DELETE
+        description: Google Cloud Container Registry Delete Image Manifest
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          required: true
+        - name: reference
+          in: path
+          type: string
+          required: true
+  exposes:
+  - type: rest
+    namespace: openapi-manifests-rest
+    port: 8080
+    description: REST adapter for Google Cloud Container Registry API — Manifests. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/v2/{name}/manifests/{reference}
+      name: v2-name-manifests-reference
+      description: REST surface for v2-name-manifests-reference.
+      operations:
+      - method: GET
+        name: getmanifest
+        description: Google Cloud Container Registry Get Image Manifest
+        call: openapi-manifests.getmanifest
+        with:
+          name: rest.name
+          reference: rest.reference
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: putmanifest
+        description: Google Cloud Container Registry Push Image Manifest
+        call: openapi-manifests.putmanifest
+        with:
+          name: rest.name
+          reference: rest.reference
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletemanifest
+        description: Google Cloud Container Registry Delete Image Manifest
+        call: openapi-manifests.deletemanifest
+        with:
+          name: rest.name
+          reference: rest.reference
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-manifests-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Container Registry API — Manifests. One tool per consumed operation, routed
+      inline through this capability's consumes block.
+    tools:
+    - name: google-cloud-container-registry-get
+      description: Google Cloud Container Registry Get Image Manifest
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-manifests.getmanifest
+      with:
+        name: tools.name
+        reference: tools.reference
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-container-registry-push
+      description: Google Cloud Container Registry Push Image Manifest
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: openapi-manifests.putmanifest
+      with:
+        name: tools.name
+        reference: tools.reference
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-container-registry-delete
+      description: Google Cloud Container Registry Delete Image Manifest
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: openapi-manifests.deletemanifest
+      with:
+        name: tools.name
+        reference: tools.reference
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,77 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Container Registry API — Tags
+  description: 'Google Cloud Container Registry API — Tags. 1 operations. Lead operation: Google Cloud Container Registry
+    List Image Tags. Self-contained Naftiko capability covering one Google Cloud Container Registry business surface.'
+  tags:
+  - Google Cloud Container Registry
+  - Tags
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_CONTAINER_REGISTRY_API_KEY: GOOGLE_CLOUD_CONTAINER_REGISTRY_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-tags
+    baseUri: https://containerregistry.googleapis.com
+    description: Google Cloud Container Registry API — Tags business capability. Self-contained, no shared references.
+    resources:
+    - name: v2-name-tags-list
+      path: /v2/{name}/tags/list
+      operations:
+      - name: listtags
+        method: GET
+        description: Google Cloud Container Registry List Image Tags
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: name
+          in: path
+          type: string
+          description: The name of the image.
+          required: true
+  exposes:
+  - type: rest
+    namespace: openapi-tags-rest
+    port: 8080
+    description: REST adapter for Google Cloud Container Registry API — Tags. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/v2/{name}/tags/list
+      name: v2-name-tags-list
+      description: REST surface for v2-name-tags-list.
+      operations:
+      - method: GET
+        name: listtags
+        description: Google Cloud Container Registry List Image Tags
+        call: openapi-tags.listtags
+        with:
+          name: rest.name
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-tags-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Container Registry API — Tags. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: google-cloud-container-registry-list
+      description: Google Cloud Container Registry List Image Tags
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-tags.listtags
+      with:
+        name: tools.name
+      outputParameters:
+      - type: object
+        mapping: $.
