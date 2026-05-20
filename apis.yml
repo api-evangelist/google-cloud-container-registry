@@ -11,66 +11,68 @@ modified: '2026-05-19'
 specificationVersion: '0.19'
 type: Index
 tags:
-- CI/CD
-- Containers
-- Docker
-- Google Cloud
-- Images
-- Registries
-- Storage
+  - CI/CD
+  - Containers
+  - Docker
+  - Google Cloud
+  - Images
+  - Registries
+  - Storage
 apis:
-- name: Google Cloud Container Registry API
-  description: The Container Registry API provides access to store, manage, and secure Docker container images. It supports
-    pushing and pulling images, managing image tags, and integrating with vulnerability scanning and binary authorization
-    services.
-  humanURL: https://cloud.google.com/container-registry/docs
-  baseURL: https://containerregistry.googleapis.com
-  properties:
-  - type: Documentation
-    url: https://cloud.google.com/container-registry/docs/reference/rest
-  - type: OpenAPI
-    url: openapi/openapi.yml
-  - type: Authentication
-    url: https://cloud.google.com/container-registry/docs/access-control
+  - name: Google Cloud Container Registry API
+    description: The Container Registry API provides access to store, manage, and secure Docker container images. It supports
+      pushing and pulling images, managing image tags, and integrating with vulnerability scanning and binary authorization
+      services.
+    humanURL: https://cloud.google.com/container-registry/docs
+    baseURL: https://containerregistry.googleapis.com
+    properties:
+    - type: Documentation
+      url: https://cloud.google.com/container-registry/docs/reference/rest
+    - type: OpenAPI
+      url: openapi/openapi.yml
+    - type: Authentication
+      url: https://cloud.google.com/container-registry/docs/access-control
+    - type: GettingStarted
+      url: https://cloud.google.com/container-registry/docs/quickstart
+    - type: JSONSchema
+      url: json-schema/json-schema.yml
+    - type: JSONLDContext
+      url: json-ld/json-ld.yml
+    - type: NaftikoCapability
+      url: capabilities/openapi-catalog.yaml
+    - type: NaftikoCapability
+      url: capabilities/openapi-blobs.yaml
+    - type: NaftikoCapability
+      url: capabilities/openapi-manifests.yaml
+    - type: NaftikoCapability
+      url: capabilities/openapi-tags.yaml
+common:
+  - type: GitHubOrganization
+    url: https://github.com/GoogleCloudPlatform
+  - type: Portal
+    url: https://cloud.google.com/container-registry
   - type: GettingStarted
     url: https://cloud.google.com/container-registry/docs/quickstart
-  - type: JSONSchema
-    url: json-schema/json-schema.yml
+  - type: Documentation
+    url: https://cloud.google.com/container-registry/docs
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: Pricing
+    url: https://cloud.google.com/container-registry/pricing
+  - type: TermsOfService
+    url: https://cloud.google.com/terms
+  - type: PrivacyPolicy
+    url: https://policies.google.com/privacy
+  - type: StatusPage
+    url: https://status.cloud.google.com/
+  - type: Support
+    url: https://cloud.google.com/container-registry/docs/support
   - type: JSONLDContext
     url: json-ld/json-ld.yml
-  - type: NaftikoCapability
-    url: capabilities/openapi-catalog.yaml
-  - type: NaftikoCapability
-    url: capabilities/openapi-blobs.yaml
-  - type: NaftikoCapability
-    url: capabilities/openapi-manifests.yaml
-  - type: NaftikoCapability
-    url: capabilities/openapi-tags.yaml
-common:
-- type: Portal
-  url: https://cloud.google.com/container-registry
-- type: GettingStarted
-  url: https://cloud.google.com/container-registry/docs/quickstart
-- type: Documentation
-  url: https://cloud.google.com/container-registry/docs
-- type: Authentication
-  url: https://cloud.google.com/docs/authentication
-- type: Pricing
-  url: https://cloud.google.com/container-registry/pricing
-- type: TermsOfService
-  url: https://cloud.google.com/terms
-- type: PrivacyPolicy
-  url: https://policies.google.com/privacy
-- type: StatusPage
-  url: https://status.cloud.google.com/
-- type: Support
-  url: https://cloud.google.com/container-registry/docs/support
-- type: JSONLDContext
-  url: json-ld/json-ld.yml
-- type: Integrations
-  url: https://cloud.google.com/marketplace
+  - type: Integrations
+    url: https://cloud.google.com/marketplace
 integrations:
-- name: Become a Partner
+  - name: Become a Partner
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
