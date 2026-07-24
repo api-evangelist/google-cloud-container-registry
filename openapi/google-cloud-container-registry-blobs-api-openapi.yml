@@ -1,0 +1,42 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Container Registry Blobs API
+  description: The Container Registry API provides access to store, manage, and secure Docker container images. It supports pushing and pulling images, managing image tags, and integrating with vulnerability scanning and binary authorization services.
+  version: v1
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/container-registry
+servers:
+- url: https://containerregistry.googleapis.com
+tags:
+- name: Blobs
+paths:
+  /v2/{name}/blobs/{digest}:
+    get:
+      operationId: getBlob
+      summary: Google Cloud Container Registry Get Image Blob
+      description: Retrieves a blob (layer) for a container image.
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: digest
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+      tags:
+      - Blobs
+externalDocs:
+  description: Google Cloud Container Registry Documentation
+  url: https://cloud.google.com/container-registry/docs

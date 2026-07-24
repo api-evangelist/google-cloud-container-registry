@@ -1,0 +1,119 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Container Registry Blobs Manifests API
+  description: The Container Registry API provides access to store, manage, and secure Docker container images. It supports pushing and pulling images, managing image tags, and integrating with vulnerability scanning and binary authorization services.
+  version: v1
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/container-registry
+servers:
+- url: https://containerregistry.googleapis.com
+tags:
+- name: Manifests
+paths:
+  /v2/{name}/manifests/{reference}:
+    get:
+      operationId: getManifest
+      summary: Google Cloud Container Registry Get Image Manifest
+      description: Retrieves the manifest for a container image.
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: reference
+        in: path
+        required: true
+        schema:
+          type: string
+        description: The tag or digest of the image.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImageManifest'
+      tags:
+      - Manifests
+    put:
+      operationId: putManifest
+      summary: Google Cloud Container Registry Push Image Manifest
+      description: Pushes an image manifest to the registry.
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: reference
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImageManifest'
+      responses:
+        '201':
+          description: Manifest created successfully
+      tags:
+      - Manifests
+    delete:
+      operationId: deleteManifest
+      summary: Google Cloud Container Registry Delete Image Manifest
+      description: Deletes an image manifest from the registry.
+      parameters:
+      - name: name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: reference
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '202':
+          description: Manifest deleted
+      tags:
+      - Manifests
+components:
+  schemas:
+    ImageManifest:
+      type: object
+      properties:
+        schemaVersion:
+          type: integer
+          description: The schema version of the manifest.
+        mediaType:
+          type: string
+          description: The media type of the manifest.
+        config:
+          type: object
+          properties:
+            mediaType:
+              type: string
+            size:
+              type: integer
+            digest:
+              type: string
+        layers:
+          type: array
+          items:
+            type: object
+            properties:
+              mediaType:
+                type: string
+              size:
+                type: integer
+              digest:
+                type: string
+externalDocs:
+  description: Google Cloud Container Registry Documentation
+  url: https://cloud.google.com/container-registry/docs
