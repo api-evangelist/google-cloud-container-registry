@@ -5,7 +5,19 @@ description: >-
   secure, private Docker image storage with integration into Google Cloud CI/CD pipelines, vulnerability scanning, and
   access control. Note that Container Registry has been superseded by Artifact Registry as the recommended container
   registry for Google Cloud.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-cloud-container-registry.png
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-container-registry/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -20,27 +32,89 @@ tags:
   - Registries
   - Storage
 apis:
-  - name: Google Cloud Container Registry API
-    description: >-
-      The Container Registry API provides access to store, manage, and secure Docker container images. It supports
-      pushing and pulling images, managing image tags, and integrating with vulnerability scanning and binary
-      authorization services.
-    humanURL: https://cloud.google.com/container-registry/docs
-    baseURL: https://containerregistry.googleapis.com
-    properties:
-      - type: Documentation
-        url: https://cloud.google.com/container-registry/docs/reference/rest
-      - type: OpenAPI
-        url: openapi/openapi.yml
-      - type: Authentication
-        url: https://cloud.google.com/container-registry/docs/access-control
-      - type: GettingStarted
-        url: https://cloud.google.com/container-registry/docs/quickstart
-      - type: JSONSchema
-        url: json-schema/json-schema.yml
-      - type: JSONLDContext
-        url: json-ld/json-ld.yml
+- aid: google-cloud-container-registry:google-cloud-container-registry-blobs-api
+  name: Google Cloud Container Registry Blobs API
+  description: The Blobs API from Google Cloud Container Registry — 1 operation(s) for blobs.
+  humanURL: https://cloud.google.com/container-registry/docs
+  baseURL: https://containerregistry.googleapis.com
+  tags:
+  - Blobs
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-container-registry-blobs-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/container-registry/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/container-registry/docs/access-control
+  - type: GettingStarted
+    url: https://cloud.google.com/container-registry/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLDContext
+    url: json-ld/json-ld.yml
+- aid: google-cloud-container-registry:google-cloud-container-registry-catalog-api
+  name: Google Cloud Container Registry  Catalog API
+  description: The  Catalog API from Google Cloud Container Registry — 1 operation(s) for  catalog.
+  humanURL: https://cloud.google.com/container-registry/docs
+  baseURL: https://containerregistry.googleapis.com
+  tags:
+  - ' Catalog'
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-container-registry-catalog-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/container-registry/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/container-registry/docs/access-control
+  - type: GettingStarted
+    url: https://cloud.google.com/container-registry/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLDContext
+    url: json-ld/json-ld.yml
+- aid: google-cloud-container-registry:google-cloud-container-registry-manifests-api
+  name: Google Cloud Container Registry Manifests API
+  description: The Manifests API from Google Cloud Container Registry — 1 operation(s) for manifests.
+  humanURL: https://cloud.google.com/container-registry/docs
+  baseURL: https://containerregistry.googleapis.com
+  tags:
+  - Manifests
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-container-registry-manifests-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/container-registry/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/container-registry/docs/access-control
+  - type: GettingStarted
+    url: https://cloud.google.com/container-registry/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLDContext
+    url: json-ld/json-ld.yml
+- aid: google-cloud-container-registry:google-cloud-container-registry-tags-api
+  name: Google Cloud Container Registry Tags API
+  description: The Tags API from Google Cloud Container Registry — 1 operation(s) for tags.
+  humanURL: https://cloud.google.com/container-registry/docs
+  baseURL: https://containerregistry.googleapis.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-container-registry-tags-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/container-registry/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/container-registry/docs/access-control
+  - type: GettingStarted
+    url: https://cloud.google.com/container-registry/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLDContext
+    url: json-ld/json-ld.yml
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-cloud-container-registry/overview
   - type: AgenticAccess
     url: agentic-access/google-cloud-container-registry-agentic-access.yml
   - type: VulnerabilityDisclosure
