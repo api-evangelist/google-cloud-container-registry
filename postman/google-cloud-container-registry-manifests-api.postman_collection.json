@@ -1,0 +1,344 @@
+{
+  "info": {
+    "_postman_id": "73ae87b4-f08f-4b71-abd1-b191fe4f7cc3",
+    "name": "Google Cloud Container Registry Blobs Manifests API",
+    "description": "The Container Registry API provides access to store, manage, and secure Docker container images. It supports pushing and pulling images, managing image tags, and integrating with vulnerability scanning and binary authorization services.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:46:52.000Z",
+    "updatedAt": "2026-07-28T01:46:52.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-73ae87b4-f08f-4b71-abd1-b191fe4f7cc3"
+  },
+  "item": [
+    {
+      "name": "v2",
+      "item": [
+        {
+          "name": "{name}",
+          "item": [
+            {
+              "name": "manifests",
+              "item": [
+                {
+                  "name": "{reference}",
+                  "item": [
+                    {
+                      "name": "Google Cloud Container Registry Get Image Manifest",
+                      "id": "02dda203-4ae9-4f88-9b90-9d1aff6de2d8",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v2/:name/manifests/:reference",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v2",
+                            ":name",
+                            "manifests",
+                            ":reference"
+                          ],
+                          "variable": [
+                            {
+                              "id": "da9eb6f6-3e0f-4c02-b255-6b9333c184ab",
+                              "key": "name",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "0dcdc177-603c-4276-9885-9b1579892836",
+                              "key": "reference",
+                              "value": "<string>",
+                              "description": "(Required) The tag or digest of the image."
+                            }
+                          ]
+                        },
+                        "description": "Retrieves the manifest for a container image."
+                      },
+                      "response": [
+                        {
+                          "id": "d4ffb349-ac63-429a-994b-2695ae55f6af",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v2/:name/manifests/:reference",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v2",
+                                ":name",
+                                "manifests",
+                                ":reference"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "name"
+                                },
+                                {
+                                  "key": "reference"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"schemaVersion\": \"<integer>\",\n  \"mediaType\": \"<string>\",\n  \"config\": {\n    \"mediaType\": \"<string>\",\n    \"size\": \"<integer>\",\n    \"digest\": \"<string>\"\n  },\n  \"layers\": [\n    {\n      \"mediaType\": \"<string>\",\n      \"size\": \"<integer>\",\n      \"digest\": \"<string>\"\n    },\n    {\n      \"mediaType\": \"<string>\",\n      \"size\": \"<integer>\",\n      \"digest\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T01:46:52.000Z",
+                          "updatedAt": "2026-07-28T01:46:52.000Z",
+                          "uid": "35240-d4ffb349-ac63-429a-994b-2695ae55f6af"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:46:52.000Z",
+                      "updatedAt": "2026-07-28T01:46:52.000Z",
+                      "uid": "35240-02dda203-4ae9-4f88-9b90-9d1aff6de2d8"
+                    },
+                    {
+                      "name": "Google Cloud Container Registry Push Image Manifest",
+                      "id": "27dfdc86-c4d5-40ac-814b-f6c1ff237e6f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PUT",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"schemaVersion\": \"<integer>\",\n  \"mediaType\": \"<string>\",\n  \"config\": {\n    \"mediaType\": \"<string>\",\n    \"size\": \"<integer>\",\n    \"digest\": \"<string>\"\n  },\n  \"layers\": [\n    {\n      \"mediaType\": \"<string>\",\n      \"size\": \"<integer>\",\n      \"digest\": \"<string>\"\n    },\n    {\n      \"mediaType\": \"<string>\",\n      \"size\": \"<integer>\",\n      \"digest\": \"<string>\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/v2/:name/manifests/:reference",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v2",
+                            ":name",
+                            "manifests",
+                            ":reference"
+                          ],
+                          "variable": [
+                            {
+                              "id": "86516ba1-cc06-4f3a-90ca-30c40018b7ea",
+                              "key": "name",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "f5ad91d7-3c97-432a-95c1-6befa81d4047",
+                              "key": "reference",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Pushes an image manifest to the registry."
+                      },
+                      "response": [
+                        {
+                          "id": "3c1a30db-528b-4f06-89eb-7957ac9cd136",
+                          "name": "Manifest created successfully",
+                          "originalRequest": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"schemaVersion\": \"<integer>\",\n  \"mediaType\": \"<string>\",\n  \"config\": {\n    \"mediaType\": \"<string>\",\n    \"size\": \"<integer>\",\n    \"digest\": \"<string>\"\n  },\n  \"layers\": [\n    {\n      \"mediaType\": \"<string>\",\n      \"size\": \"<integer>\",\n      \"digest\": \"<string>\"\n    },\n    {\n      \"mediaType\": \"<string>\",\n      \"size\": \"<integer>\",\n      \"digest\": \"<string>\"\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/v2/:name/manifests/:reference",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v2",
+                                ":name",
+                                "manifests",
+                                ":reference"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "name"
+                                },
+                                {
+                                  "key": "reference"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:46:52.000Z",
+                          "updatedAt": "2026-07-28T01:46:52.000Z",
+                          "uid": "35240-3c1a30db-528b-4f06-89eb-7957ac9cd136"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:46:52.000Z",
+                      "updatedAt": "2026-07-28T01:46:52.000Z",
+                      "uid": "35240-27dfdc86-c4d5-40ac-814b-f6c1ff237e6f"
+                    },
+                    {
+                      "name": "Google Cloud Container Registry Delete Image Manifest",
+                      "id": "3b08d365-383a-47a1-b0a1-072183095ba5",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/v2/:name/manifests/:reference",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v2",
+                            ":name",
+                            "manifests",
+                            ":reference"
+                          ],
+                          "variable": [
+                            {
+                              "id": "48f03c85-0616-48a9-a36a-41645946c27e",
+                              "key": "name",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "763af756-b015-4452-8168-2a7ae0acbb45",
+                              "key": "reference",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Deletes an image manifest from the registry."
+                      },
+                      "response": [
+                        {
+                          "id": "c3019bce-b763-459c-ae1d-3e5accf13ef8",
+                          "name": "Manifest deleted",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/v2/:name/manifests/:reference",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v2",
+                                ":name",
+                                "manifests",
+                                ":reference"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "name"
+                                },
+                                {
+                                  "key": "reference"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Accepted",
+                          "code": 202,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:46:52.000Z",
+                          "updatedAt": "2026-07-28T01:46:52.000Z",
+                          "uid": "35240-c3019bce-b763-459c-ae1d-3e5accf13ef8"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:46:52.000Z",
+                      "updatedAt": "2026-07-28T01:46:52.000Z",
+                      "uid": "35240-3b08d365-383a-47a1-b0a1-072183095ba5"
+                    }
+                  ],
+                  "id": "7ef1e757-cabf-4afa-8567-5a8aa49efa99",
+                  "createdAt": "2026-07-28T01:46:52.000Z",
+                  "updatedAt": "2026-07-28T01:46:52.000Z",
+                  "uid": "35240-7ef1e757-cabf-4afa-8567-5a8aa49efa99"
+                }
+              ],
+              "id": "da7c4bcb-83fd-4ca7-be1e-7f2a3d6a686a",
+              "createdAt": "2026-07-28T01:46:52.000Z",
+              "updatedAt": "2026-07-28T01:46:52.000Z",
+              "uid": "35240-da7c4bcb-83fd-4ca7-be1e-7f2a3d6a686a"
+            }
+          ],
+          "id": "7cd3a9b7-0875-4bb2-980f-bc9478a054b0",
+          "createdAt": "2026-07-28T01:46:52.000Z",
+          "updatedAt": "2026-07-28T01:46:52.000Z",
+          "uid": "35240-7cd3a9b7-0875-4bb2-980f-bc9478a054b0"
+        }
+      ],
+      "id": "55c7284f-f50e-4ade-ab92-41f7ac241307",
+      "createdAt": "2026-07-28T01:46:52.000Z",
+      "updatedAt": "2026-07-28T01:46:52.000Z",
+      "uid": "35240-55c7284f-f50e-4ade-ab92-41f7ac241307"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://containerregistry.googleapis.com"
+    }
+  ]
+}

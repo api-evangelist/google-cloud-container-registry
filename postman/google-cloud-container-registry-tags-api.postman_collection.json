@@ -1,0 +1,143 @@
+{
+  "info": {
+    "_postman_id": "a22082bb-26b9-4992-bb61-8684e663d14e",
+    "name": "Google Cloud Container Registry Blobs Tags API",
+    "description": "The Container Registry API provides access to store, manage, and secure Docker container images. It supports pushing and pulling images, managing image tags, and integrating with vulnerability scanning and binary authorization services.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:46:54.000Z",
+    "updatedAt": "2026-07-28T01:46:55.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-a22082bb-26b9-4992-bb61-8684e663d14e"
+  },
+  "item": [
+    {
+      "name": "v2",
+      "item": [
+        {
+          "name": "{name}",
+          "item": [
+            {
+              "name": "tags",
+              "item": [
+                {
+                  "name": "list",
+                  "item": [
+                    {
+                      "name": "Google Cloud Container Registry List Image Tags",
+                      "id": "e7d3fd69-475d-4a59-b96a-80f2c0700cee",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v2/:name/tags/list",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v2",
+                            ":name",
+                            "tags",
+                            "list"
+                          ],
+                          "variable": [
+                            {
+                              "id": "02a23c9c-3b3f-4373-837e-dfbe41f1f9ce",
+                              "key": "name",
+                              "value": "<string>",
+                              "description": "(Required) The name of the image."
+                            }
+                          ]
+                        },
+                        "description": "Lists tags for a given image in the registry."
+                      },
+                      "response": [
+                        {
+                          "id": "da22303a-4d36-44c5-858e-64e49fc6151c",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v2/:name/tags/list",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v2",
+                                ":name",
+                                "tags",
+                                "list"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "name"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"name\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                          "createdAt": "2026-07-28T01:46:55.000Z",
+                          "updatedAt": "2026-07-28T01:46:55.000Z",
+                          "uid": "35240-da22303a-4d36-44c5-858e-64e49fc6151c"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:46:55.000Z",
+                      "updatedAt": "2026-07-28T01:46:55.000Z",
+                      "uid": "35240-e7d3fd69-475d-4a59-b96a-80f2c0700cee"
+                    }
+                  ],
+                  "id": "6452997c-21d0-4e0b-99f4-23b9a92e08ac",
+                  "createdAt": "2026-07-28T01:46:55.000Z",
+                  "updatedAt": "2026-07-28T01:46:55.000Z",
+                  "uid": "35240-6452997c-21d0-4e0b-99f4-23b9a92e08ac"
+                }
+              ],
+              "id": "3c8556d6-f133-40ff-bd8e-88904646a23b",
+              "createdAt": "2026-07-28T01:46:55.000Z",
+              "updatedAt": "2026-07-28T01:46:55.000Z",
+              "uid": "35240-3c8556d6-f133-40ff-bd8e-88904646a23b"
+            }
+          ],
+          "id": "365dd745-eb4b-4811-8ca8-5d1b03ccf197",
+          "createdAt": "2026-07-28T01:46:55.000Z",
+          "updatedAt": "2026-07-28T01:46:55.000Z",
+          "uid": "35240-365dd745-eb4b-4811-8ca8-5d1b03ccf197"
+        }
+      ],
+      "id": "74658cc9-54ff-4489-87c9-994c2873f0f1",
+      "createdAt": "2026-07-28T01:46:55.000Z",
+      "updatedAt": "2026-07-28T01:46:55.000Z",
+      "uid": "35240-74658cc9-54ff-4489-87c9-994c2873f0f1"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://containerregistry.googleapis.com"
+    }
+  ]
+}

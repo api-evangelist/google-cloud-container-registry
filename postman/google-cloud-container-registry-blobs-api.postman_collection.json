@@ -1,0 +1,152 @@
+{
+  "info": {
+    "_postman_id": "40773ad1-a5f1-4e01-8d48-2c9c4d56583d",
+    "name": "Google Cloud Container Registry Blobs API",
+    "description": "The Container Registry API provides access to store, manage, and secure Docker container images. It supports pushing and pulling images, managing image tags, and integrating with vulnerability scanning and binary authorization services.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:46:50.000Z",
+    "updatedAt": "2026-07-28T01:46:50.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-40773ad1-a5f1-4e01-8d48-2c9c4d56583d"
+  },
+  "item": [
+    {
+      "name": "v2",
+      "item": [
+        {
+          "name": "{name}",
+          "item": [
+            {
+              "name": "blobs",
+              "item": [
+                {
+                  "name": "{digest}",
+                  "item": [
+                    {
+                      "name": "Google Cloud Container Registry Get Image Blob",
+                      "id": "696d9c23-09d1-4f40-8201-80ce2d04b1d3",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/octet-stream"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/v2/:name/blobs/:digest",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "v2",
+                            ":name",
+                            "blobs",
+                            ":digest"
+                          ],
+                          "variable": [
+                            {
+                              "id": "259979b8-2690-4695-a20c-3cb445ac14f5",
+                              "key": "name",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "cd0398c1-de54-4381-89ba-f26ae67123a6",
+                              "key": "digest",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Retrieves a blob (layer) for a container image."
+                      },
+                      "response": [
+                        {
+                          "id": "c244a382-2131-460c-a945-93c3cbe0cefe",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/octet-stream"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/v2/:name/blobs/:digest",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "v2",
+                                ":name",
+                                "blobs",
+                                ":digest"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "name"
+                                },
+                                {
+                                  "key": "digest"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/octet-stream"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "<binary>",
+                          "createdAt": "2026-07-28T01:46:50.000Z",
+                          "updatedAt": "2026-07-28T01:46:50.000Z",
+                          "uid": "35240-c244a382-2131-460c-a945-93c3cbe0cefe"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:46:50.000Z",
+                      "updatedAt": "2026-07-28T01:46:50.000Z",
+                      "uid": "35240-696d9c23-09d1-4f40-8201-80ce2d04b1d3"
+                    }
+                  ],
+                  "id": "deb0d949-d6fc-462e-a0f2-8b3ef6657d6c",
+                  "createdAt": "2026-07-28T01:46:50.000Z",
+                  "updatedAt": "2026-07-28T01:46:50.000Z",
+                  "uid": "35240-deb0d949-d6fc-462e-a0f2-8b3ef6657d6c"
+                }
+              ],
+              "id": "f26e884d-16b4-4651-8543-3de7367289ed",
+              "createdAt": "2026-07-28T01:46:50.000Z",
+              "updatedAt": "2026-07-28T01:46:50.000Z",
+              "uid": "35240-f26e884d-16b4-4651-8543-3de7367289ed"
+            }
+          ],
+          "id": "39a94656-3965-4ad7-ad35-f2d7677d8704",
+          "createdAt": "2026-07-28T01:46:50.000Z",
+          "updatedAt": "2026-07-28T01:46:50.000Z",
+          "uid": "35240-39a94656-3965-4ad7-ad35-f2d7677d8704"
+        }
+      ],
+      "id": "933d87d1-592c-4ee9-b458-0fe2a835528c",
+      "createdAt": "2026-07-28T01:46:50.000Z",
+      "updatedAt": "2026-07-28T01:46:50.000Z",
+      "uid": "35240-933d87d1-592c-4ee9-b458-0fe2a835528c"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://containerregistry.googleapis.com"
+    }
+  ]
+}

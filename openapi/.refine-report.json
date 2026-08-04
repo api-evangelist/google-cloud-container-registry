@@ -1,0 +1,20 @@
+{
+  "provider": "google-cloud-container-registry",
+  "sources": [
+    "google-cloud-container-registry-blobs-api-openapi.yml",
+    "google-cloud-container-registry-catalog-api-openapi.yml",
+    "google-cloud-container-registry-manifests-api-openapi.yml",
+    "google-cloud-container-registry-tags-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-container-registry-blobs-api-openapi.yml",
+    "google-cloud-container-registry-catalog-api-openapi.yml",
+    "google-cloud-container-registry-manifests-api-openapi.yml",
+    "google-cloud-container-registry-tags-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

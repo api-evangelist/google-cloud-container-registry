@@ -1,0 +1,206 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Container Registry API
+  description: >-
+    The Container Registry API provides access to store, manage, and secure
+    Docker container images. It supports pushing and pulling images, managing
+    image tags, and integrating with vulnerability scanning and binary
+    authorization services.
+  version: v1
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/container-registry
+externalDocs:
+  description: Google Cloud Container Registry Documentation
+  url: https://cloud.google.com/container-registry/docs
+servers:
+  - url: https://containerregistry.googleapis.com
+paths:
+  /v2/{name}/tags/list:
+    get:
+      operationId: listTags
+      summary: Google Cloud Container Registry List Image Tags
+      description: Lists tags for a given image in the registry.
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The name of the image.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListTagsResponse'
+      tags:
+        - Tags
+  /v2/{name}/manifests/{reference}:
+    get:
+      operationId: getManifest
+      summary: Google Cloud Container Registry Get Image Manifest
+      description: Retrieves the manifest for a container image.
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: reference
+          in: path
+          required: true
+          schema:
+            type: string
+          description: The tag or digest of the image.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImageManifest'
+      tags:
+        - Manifests
+    put:
+      operationId: putManifest
+      summary: Google Cloud Container Registry Push Image Manifest
+      description: Pushes an image manifest to the registry.
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: reference
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImageManifest'
+      responses:
+        '201':
+          description: Manifest created successfully
+      tags:
+        - Manifests
+    delete:
+      operationId: deleteManifest
+      summary: Google Cloud Container Registry Delete Image Manifest
+      description: Deletes an image manifest from the registry.
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: reference
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '202':
+          description: Manifest deleted
+      tags:
+        - Manifests
+  /v2/_catalog:
+    get:
+      operationId: listCatalog
+      summary: Google Cloud Container Registry List Repositories
+      description: Lists repositories in the registry.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CatalogResponse'
+      tags:
+        - ' Catalog'
+  /v2/{name}/blobs/{digest}:
+    get:
+      operationId: getBlob
+      summary: Google Cloud Container Registry Get Image Blob
+      description: Retrieves a blob (layer) for a container image.
+      parameters:
+        - name: name
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: digest
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+      tags:
+        - Blobs
+components:
+  schemas:
+    ListTagsResponse:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The name of the image.
+        tags:
+          type: array
+          items:
+            type: string
+          description: The list of tags for the image.
+    ImageManifest:
+      type: object
+      properties:
+        schemaVersion:
+          type: integer
+          description: The schema version of the manifest.
+        mediaType:
+          type: string
+          description: The media type of the manifest.
+        config:
+          type: object
+          properties:
+            mediaType:
+              type: string
+            size:
+              type: integer
+            digest:
+              type: string
+        layers:
+          type: array
+          items:
+            type: object
+            properties:
+              mediaType:
+                type: string
+              size:
+                type: integer
+              digest:
+                type: string
+    CatalogResponse:
+      type: object
+      properties:
+        repositories:
+          type: array
+          items:
+            type: string
+          description: The list of repository names.
+tags:
+  - name: ' Catalog'
+  - name: Blobs
+  - name: Manifests
+  - name: Tags
