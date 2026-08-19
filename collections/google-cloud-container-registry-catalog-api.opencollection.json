@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Container Registry Blobs  Catalog API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": " Catalog",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Container Registry List Repositories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://containerregistry.googleapis.com/v2/_catalog"
+          },
+          "docs": "Lists repositories in the registry."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

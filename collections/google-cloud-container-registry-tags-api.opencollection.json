@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Container Registry Blobs Tags API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tags",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Container Registry List Image Tags",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://containerregistry.googleapis.com/v2/:name/tags/list",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "The name of the image."
+              }
+            ]
+          },
+          "docs": "Lists tags for a given image in the registry."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

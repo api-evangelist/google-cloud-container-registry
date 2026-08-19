@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Container Registry Blobs API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Blobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Container Registry Get Image Blob",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://containerregistry.googleapis.com/v2/:name/blobs/:digest",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "digest",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves a blob (layer) for a container image."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
