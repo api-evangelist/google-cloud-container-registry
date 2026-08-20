@@ -28,6 +28,14 @@ tags:
   - Containers
   - Docker
   - Google Cloud
+  - Image
+  - Registries
+  - Storage
+tags_raw:
+  - CI/CD
+  - Containers
+  - Docker
+  - Google Cloud
   - Images
   - Registries
   - Storage
@@ -58,6 +66,8 @@ apis:
   humanURL: https://cloud.google.com/container-registry/docs
   baseURL: https://containerregistry.googleapis.com
   tags:
+  - Catalog
+  tags_raw:
   - ' Catalog'
   properties:
   - type: OpenAPI
