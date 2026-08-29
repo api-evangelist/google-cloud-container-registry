@@ -5,6 +5,18 @@ description: >-
   secure, private Docker image storage with integration into Google Cloud CI/CD pipelines, vulnerability scanning, and
   access control. Note that Container Registry has been superseded by Artifact Registry as the recommended container
   registry for Google Cloud.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
