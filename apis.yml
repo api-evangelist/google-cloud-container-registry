@@ -38,6 +38,7 @@ type: Index
 tags:
   - CI/CD
   - Containers
+  - Developer Tools
   - Docker
   - Google Cloud
   - Image
