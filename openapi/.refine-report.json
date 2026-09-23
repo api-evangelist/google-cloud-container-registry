@@ -1,14 +1,11 @@
 {
   "provider": "google-cloud-container-registry",
   "sources": [
-    "google-cloud-container-registry-blobs-api-openapi.yml",
-    "google-cloud-container-registry-catalog-api-openapi.yml",
-    "google-cloud-container-registry-manifests-api-openapi.yml",
-    "google-cloud-container-registry-tags-api-openapi.yml"
+    "_original/openapi.yml"
   ],
   "outputs": [
-    "google-cloud-container-registry-blobs-api-openapi.yml",
     "google-cloud-container-registry-catalog-api-openapi.yml",
+    "google-cloud-container-registry-blobs-api-openapi.yml",
     "google-cloud-container-registry-manifests-api-openapi.yml",
     "google-cloud-container-registry-tags-api-openapi.yml"
   ],
@@ -16,11 +13,14 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "google-cloud-container-registry-blobs-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-cloud-container-registry-catalog-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-cloud-container-registry-manifests-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-cloud-container-registry-tags-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "google-cloud-container-registry-blobs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-cloud-container-registry-catalog-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-cloud-container-registry-manifests-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-cloud-container-registry-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

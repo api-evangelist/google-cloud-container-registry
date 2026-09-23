@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud Container Registry Blobs Tags API
+  title: Google Cloud Container Registry Tags API
   description: The Container Registry API provides access to store, manage, and secure Docker container images. It supports pushing and pulling images, managing image tags, and integrating with vulnerability scanning and binary authorization services.
   version: v1
   contact:
