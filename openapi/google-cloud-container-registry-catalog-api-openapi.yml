@@ -9,7 +9,7 @@ info:
 servers:
 - url: https://containerregistry.googleapis.com
 tags:
-- name: ' Catalog'
+- name: Catalog
 paths:
   /v2/_catalog:
     get:
@@ -24,7 +24,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/CatalogResponse'
       tags:
-      - ' Catalog'
+      - Catalog
 components:
   schemas:
     CatalogResponse:
